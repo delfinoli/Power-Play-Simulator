@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://x5w8o8a4cmeh"]
+
+[ext_resource type="Script" path="res://junction.gd" id="1_7sctx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4wb0"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gupv0"]
+radius = 8.0
+
+[node name="junction" type="Area2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_7sctx")
+
+[node name="Selection Area" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a4wb0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionBox" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_gupv0")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
