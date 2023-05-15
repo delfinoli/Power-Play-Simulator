@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://b2as7fof2yxv4"]
 
-[ext_resource type="Script" path="res://highPole.gd" id="1_7sctx"]
+[ext_resource type="Script" path="res://highPole.gd" id="1_qo8vv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a4wb0"]
 radius = 16.0
@@ -8,10 +8,10 @@ radius = 16.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_gupv0"]
 radius = 8.0
 
-[node name="junction" type="Area2D"]
+[node name="highPole" type="Area2D"]
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("1_7sctx")
+script = ExtResource("1_qo8vv")
 
 [node name="Selection Area" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a4wb0")

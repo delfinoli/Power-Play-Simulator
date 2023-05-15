@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj7avgrv0fysf"]
+[gd_scene load_steps=7 format=3 uid="uid://cj7avgrv0fysf"]
 
 [ext_resource type="Texture2D" uid="uid://k2mvngimr0dv" path="res://1x/Artboard 1.png" id="1_fuppl"]
-[ext_resource type="PackedScene" uid="uid://x5w8o8a4cmeh" path="res://junction.tscn" id="2_l04xk"]
 [ext_resource type="PackedScene" uid="uid://dqdt5t0foxifc" path="res://robot.tscn" id="2_tuwi1"]
 [ext_resource type="PackedScene" uid="uid://c85hn6a6s1shf" path="res://substation.tscn" id="4_5adhj"]
 [ext_resource type="PackedScene" uid="uid://becd5bsmbnu07" path="res://scoreBoard.tscn" id="5_qn2se"]
+[ext_resource type="PackedScene" uid="uid://b5subywd312up" path="res://lowPole.tscn" id="5_ynydd"]
+[ext_resource type="PackedScene" uid="uid://bn6mu6gbws1qi" path="res://mediumPole.tscn" id="6_6c4yu"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,80 +20,6 @@ zoom = Vector2(0.6, 0.6)
 [node name="Robot" parent="." instance=ExtResource("2_tuwi1")]
 position = Vector2(-456, -276)
 
-[node name="junction" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-360, -360)
-
-[node name="junction2" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-360, -180)
-
-[node name="junction3" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-360, 0)
-
-[node name="junction4" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-360, 180)
-
-[node name="junction5" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-360, 360)
-
-[node name="junction6" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-180, -360)
-
-[node name="junction7" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-180, -180)
-
-[node name="junction8" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-180, 0)
-
-[node name="junction9" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-180, 180)
-
-[node name="junction10" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(-180, 360)
-
-[node name="junction11" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(0, -360)
-
-[node name="junction12" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(0, -180)
-
-[node name="junction13" parent="." instance=ExtResource("2_l04xk")]
-
-[node name="junction14" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(0, 180)
-
-[node name="junction15" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(0, 360)
-
-[node name="junction16" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(180, -360)
-
-[node name="junction17" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(180, -180)
-
-[node name="junction18" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(180, 0)
-
-[node name="junction19" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(180, 180)
-
-[node name="junction20" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(180, 360)
-
-[node name="junction21" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(360, -360)
-
-[node name="junction22" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(360, -180)
-
-[node name="junction23" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(360, 0)
-
-[node name="junction24" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(360, 180)
-
-[node name="junction25" parent="." instance=ExtResource("2_l04xk")]
-position = Vector2(360, 360)
-
 [node name="Substation" parent="." instance=ExtResource("4_5adhj")]
 position = Vector2(-540, 0)
 
@@ -105,3 +32,39 @@ offset_left = 540.0
 offset_top = -540.0
 offset_right = 540.0
 offset_bottom = -540.0
+
+[node name="lowPole" parent="." instance=ExtResource("5_ynydd")]
+position = Vector2(-360, -180)
+
+[node name="lowPole2" parent="." instance=ExtResource("5_ynydd")]
+position = Vector2(-360, 180)
+
+[node name="lowPole3" parent="." instance=ExtResource("5_ynydd")]
+position = Vector2(-180, -360)
+
+[node name="lowPole4" parent="." instance=ExtResource("5_ynydd")]
+position = Vector2(-180, 360)
+
+[node name="lowPole5" parent="." instance=ExtResource("5_ynydd")]
+position = Vector2(180, -360)
+
+[node name="lowPole6" parent="." instance=ExtResource("5_ynydd")]
+position = Vector2(180, 360)
+
+[node name="lowPole7" parent="." instance=ExtResource("5_ynydd")]
+position = Vector2(360, -180)
+
+[node name="lowPole8" parent="." instance=ExtResource("5_ynydd")]
+position = Vector2(360, 180)
+
+[node name="mediumPole" parent="." instance=ExtResource("6_6c4yu")]
+position = Vector2(-180, -180)
+
+[node name="mediumPole2" parent="." instance=ExtResource("6_6c4yu")]
+position = Vector2(-180, 180)
+
+[node name="mediumPole3" parent="." instance=ExtResource("6_6c4yu")]
+position = Vector2(180, -180)
+
+[node name="mediumPole4" parent="." instance=ExtResource("6_6c4yu")]
+position = Vector2(180, 180)

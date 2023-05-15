@@ -16,7 +16,7 @@ func _on_body_entered(body):
 	canDraw = true
 	if Input.is_action_just_pressed("leftClick"):
 		clickPos = get_local_mouse_position()
-	if global.atTarget == true and global.hasCone == true:
+	if global.atTarget == true and global.hasCone == true and global.inSubstation:
 		global.hasCone = false
-		global.score += 5
+		global.score += 3
 		queue_redraw()
