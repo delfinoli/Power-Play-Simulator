@@ -14,7 +14,6 @@ rotation = 1.5708
 texture = ExtResource("1_fuppl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(420, 0)
 zoom = Vector2(0.6, 0.6)
 
 [node name="Robot" parent="." instance=ExtResource("2_tuwi1")]
@@ -125,7 +124,14 @@ rotation = 1.5708
 red = false
 
 [node name="scoreBoard" parent="." instance=ExtResource("5_qn2se")]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = -960.0
+offset_bottom = -540.0
+
+[node name="scoreBoard2" parent="." instance=ExtResource("5_qn2se")]
 offset_left = 540.0
 offset_top = -540.0
 offset_right = 540.0
 offset_bottom = -540.0
+red = false

@@ -8,6 +8,8 @@ var redOwns
 @export
 var score = 5
 
+var coneColor
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	clickPos = Vector2(position.x, position.y)
@@ -15,7 +17,7 @@ func _ready():
 
 func _draw():
 	if canDraw == true:
-		draw_circle(Vector2(0,0),15,Color(255,0,0))
+		draw_circle(Vector2(0,0),10,coneColor)
 
 func _on_body_entered(body):
 	if body.name == "Robot":
@@ -26,12 +28,20 @@ func _on_body_entered(body):
 			body.hasCone = false
 			if body.red == true:
 				global.redScore += score
-				if redOwns == false:
+				coneColor = Color(255,0,0)
+				if redOwns == null:
+					global.redScore +=3
+				elif redOwns == false:
 					global.redScore += 3
 					global.blueScore -= 3
+				redOwns = true
 			else:
 				global.blueScore += score
-				if redOwns == true:
+				coneColor = Color(0,0,255)
+				if redOwns == null:
+					global.blueScore +=3
+				elif redOwns == true:
 					global.redScore -= 3
 					global.blueScore += 3
+				redOwns = false
 			queue_redraw()

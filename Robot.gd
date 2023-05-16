@@ -18,6 +18,9 @@ var height = 100
 var robotShape = Vector2(width,height)
 var robotColor = Color(0,0,0)
 
+var coneColor = Color(255,0,0)
+
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -30,12 +33,18 @@ func _draw():
 	var rect = Rect2(Vector2(-width/2,-height/2), robotShape)
 	draw_rect(rect, robotColor)
 	if hasCone == true:
-		draw_circle(Vector2(0,0),15,Color(255,0,0))
+		draw_circle(Vector2(0,0),15,coneColor)
 
 func _process(delta):
 	queue_redraw()
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("switchColor") and red == true:
+		red = false
+		coneColor = Color(0,0,255)
+	elif Input.is_action_just_pressed("switchColor") and red == false:
+		red = true
+		coneColor = Color(255,0,0)
 	if Input.is_action_just_pressed("leftClick"):
 		clickPos = get_global_mouse_position()
 		atTarget = false
