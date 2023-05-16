@@ -1,11 +1,10 @@
 extends Node
 
-var score = 0
-var hasCone = false
-var substationCones = 20
-var inSubstation = false
+var redScore = 0
+var redSubstationCones = 20
 
-var atTarget = true
+var blueScore = 0
+var blueSubstationCones = 20
 
 func _ready():
 	pass

@@ -10,6 +10,7 @@
 
 [node name="Artboard1" type="Sprite2D" parent="."]
 texture_filter = 1
+rotation = 1.5708
 texture = ExtResource("1_fuppl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -17,88 +18,111 @@ offset = Vector2(420, 0)
 zoom = Vector2(0.6, 0.6)
 
 [node name="Robot" parent="." instance=ExtResource("2_tuwi1")]
-position = Vector2(-456, -276)
+position = Vector2(-265, 466)
 
 [node name="junction" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, -360)
+score = 2
 
 [node name="junction2" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, -180)
+score = 3
 
 [node name="junction3" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, 0)
+score = 2
 
 [node name="junction4" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, 180)
+score = 3
 
 [node name="junction5" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, 360)
+score = 2
 
 [node name="junction6" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, -360)
+score = 3
 
 [node name="junction7" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, -180)
+score = 4
 
 [node name="junction8" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, 0)
 
 [node name="junction9" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, 180)
+score = 4
 
 [node name="junction10" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, 360)
+score = 3
 
 [node name="junction11" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, -360)
+score = 2
 
 [node name="junction12" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, -180)
 
 [node name="junction13" parent="." instance=ExtResource("2_l04xk")]
+score = 2
 
 [node name="junction14" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, 180)
 
 [node name="junction15" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, 360)
+score = 2
 
 [node name="junction16" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, -360)
+score = 3
 
 [node name="junction17" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, -180)
+score = 4
 
 [node name="junction18" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, 0)
 
 [node name="junction19" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, 180)
+score = 4
 
 [node name="junction20" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, 360)
+score = 3
 
 [node name="junction21" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, -360)
+score = 2
 
 [node name="junction22" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, -180)
+score = 3
 
 [node name="junction23" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, 0)
+score = 2
 
 [node name="junction24" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, 180)
+score = 3
 
 [node name="junction25" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, 360)
+score = 2
 
 [node name="Substation" parent="." instance=ExtResource("4_5adhj")]
-position = Vector2(-540, 0)
+position = Vector2(0, 540)
+rotation = -1.5708
 
 [node name="Substation2" parent="." instance=ExtResource("4_5adhj")]
-position = Vector2(540, 0)
-scale = Vector2(-1, -1)
+position = Vector2(0, -540)
+rotation = 1.5708
+red = false
 
 [node name="scoreBoard" parent="." instance=ExtResource("5_qn2se")]
 offset_left = 540.0

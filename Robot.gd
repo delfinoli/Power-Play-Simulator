@@ -1,5 +1,13 @@
 extends CharacterBody2D
 
+@export
+var robotNum = 1
+@export
+var red = true
+
+var hasCone = false
+var inSubstation = false
+var atTarget = true
 
 var speed = 300.0 
 var velo = Vector2(0,0)
@@ -21,7 +29,7 @@ func _ready():
 func _draw():
 	var rect = Rect2(Vector2(-width/2,-height/2), robotShape)
 	draw_rect(rect, robotColor)
-	if global.hasCone == true:
+	if hasCone == true:
 		draw_circle(Vector2(0,0),15,Color(255,0,0))
 
 func _process(delta):
@@ -30,7 +38,7 @@ func _process(delta):
 func _physics_process(delta):
 	if Input.is_action_just_pressed("leftClick"):
 		clickPos = get_global_mouse_position()
-		global.atTarget = false
+		atTarget = false
 	
 	var targetPos = (clickPos-position).normalized()
 	
@@ -38,4 +46,4 @@ func _physics_process(delta):
 		velocity = targetPos * speed
 		move_and_slide()
 	if position.distance_to(clickPos) < 110:
-		global.atTarget = true
+		atTarget = true

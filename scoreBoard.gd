@@ -8,5 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$score.text = "Score: " + str(global.score)
-	$conesInSubstation.text = "Cones in Substation: " + str(global.substationCones)
+	$score.text = "Score: " + str(global.redScore)
+	$conesInSubstation.text = "Cones in Substation: " + str(global.redSubstationCones)

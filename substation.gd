@@ -1,6 +1,7 @@
 extends Area2D
 
-
+@export
+var red = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,13 +14,20 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	global.inSubstation = true
-	print("in substation: ", global.inSubstation)
-	if global.hasCone == false and global.substationCones != 0:
-		global.hasCone = true
-		global.substationCones -= 1
+	if body.name == "Robot":
+		body.inSubstation = true
+		print("in substation: ", body.inSubstation)
+		if body.red == true:
+			if body.hasCone == false and global.redSubstationCones != 0:
+				body.hasCone = true
+				global.redSubstationCones -= 1
+		else:
+			if body.hasCone == false and global.blueSubstationCones != 0:
+				body.hasCone = true
+				global.blueSubstationCones -= 1
 		
 
 
 func _on_body_exited(body):
-	global.inSubstation = false
+	if body.name == "Robot":
+		body.inSubstation = false
