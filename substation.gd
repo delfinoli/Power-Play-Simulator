@@ -17,12 +17,10 @@ func _on_body_entered(body):
 	if body.name == "Robot":
 		body.inSubstation = true
 		print("in substation: ", body.inSubstation)
-		if body.red == true:
-			if body.hasCone == false and global.redSubstationCones != 0:
+		if body.red == true and red == true and body.hasCone == false and global.redSubstationCones != 0:
 				body.hasCone = true
 				global.redSubstationCones -= 1
-		else:
-			if body.hasCone == false and global.blueSubstationCones != 0:
+		elif body.red == false and red == false and body.hasCone == false and global.blueSubstationCones != 0:
 				body.hasCone = true
 				global.blueSubstationCones -= 1
 		
