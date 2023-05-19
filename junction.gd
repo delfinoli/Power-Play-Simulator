@@ -7,6 +7,8 @@ var redOwns
 
 @export
 var score = 5
+@export
+var id=[0,0]
 
 var coneColor
 
@@ -24,7 +26,7 @@ func _on_body_entered(body):
 		canDraw = true
 		if Input.is_action_just_pressed("leftClick"):
 			clickPos = get_local_mouse_position()
-		if body.atTarget == true and body.hasCone == true and body.inSubstation == false:
+		if body.clickPos.distance_to(position) <= 20 and body.hasCone == true and body.inSubstation == false:
 			body.hasCone = false
 			if body.red == true:
 				global.redScore += score

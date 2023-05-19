@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj7avgrv0fysf"]
+[gd_scene load_steps=7 format=3 uid="uid://cj7avgrv0fysf"]
 
 [ext_resource type="Texture2D" uid="uid://k2mvngimr0dv" path="res://1x/Artboard 1.png" id="1_fuppl"]
 [ext_resource type="PackedScene" uid="uid://x5w8o8a4cmeh" path="res://junction.tscn" id="2_l04xk"]
 [ext_resource type="PackedScene" uid="uid://dqdt5t0foxifc" path="res://robot.tscn" id="2_tuwi1"]
 [ext_resource type="PackedScene" uid="uid://c85hn6a6s1shf" path="res://substation.tscn" id="4_5adhj"]
 [ext_resource type="PackedScene" uid="uid://becd5bsmbnu07" path="res://scoreBoard.tscn" id="5_qn2se"]
+[ext_resource type="PackedScene" uid="uid://enqwx4levape" path="res://terminal.tscn" id="6_wu7gl"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,93 +27,117 @@ score = 2
 [node name="junction2" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, -180)
 score = 3
+id = [0, 1]
 
 [node name="junction3" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, 0)
 score = 2
+id = [0, 2]
 
 [node name="junction4" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, 180)
 score = 3
+id = [0, 3]
 
 [node name="junction5" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, 360)
 score = 2
+id = [0, 4]
 
 [node name="junction6" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, -360)
 score = 3
+id = [1, 0]
 
 [node name="junction7" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, -180)
 score = 4
+id = [1, 1]
 
 [node name="junction8" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, 0)
+id = [1, 2]
 
 [node name="junction9" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, 180)
 score = 4
+id = [1, 3]
 
 [node name="junction10" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, 360)
 score = 3
+id = [1, 4]
 
 [node name="junction11" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, -360)
 score = 2
+id = [2, 0]
 
 [node name="junction12" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, -180)
+id = [2, 1]
 
 [node name="junction13" parent="." instance=ExtResource("2_l04xk")]
 score = 2
+id = [2, 2]
 
 [node name="junction14" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, 180)
+id = [2, 3]
 
 [node name="junction15" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, 360)
 score = 2
+id = [2, 4]
 
 [node name="junction16" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, -360)
 score = 3
+id = [3, 0]
 
 [node name="junction17" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, -180)
 score = 4
+id = [3, 1]
 
 [node name="junction18" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, 0)
+id = [3, 2]
 
 [node name="junction19" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, 180)
 score = 4
+id = [3, 3]
 
 [node name="junction20" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, 360)
 score = 3
+id = [3, 4]
 
 [node name="junction21" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, -360)
 score = 2
+id = [4, 0]
 
 [node name="junction22" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, -180)
 score = 3
+id = [4, 1]
 
 [node name="junction23" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, 0)
 score = 2
+id = [4, 2]
 
 [node name="junction24" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, 180)
 score = 3
+id = [4, 3]
 
 [node name="junction25" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, 360)
 score = 2
+id = [4, 4]
 
 [node name="Substation" parent="." instance=ExtResource("4_5adhj")]
 position = Vector2(0, 540)
@@ -135,3 +160,25 @@ offset_top = -540.0
 offset_right = 540.0
 offset_bottom = -540.0
 red = false
+
+[node name="terminal" parent="." instance=ExtResource("6_wu7gl")]
+position = Vector2(-540, -540)
+rotation = 1.5708
+red = false
+
+[node name="terminal2" parent="." instance=ExtResource("6_wu7gl")]
+position = Vector2(540, -540)
+rotation = 3.14159
+
+[node name="terminal3" parent="." instance=ExtResource("6_wu7gl")]
+position = Vector2(-540, 540)
+
+[node name="terminal4" parent="." instance=ExtResource("6_wu7gl")]
+position = Vector2(540, 540)
+rotation = -1.5708
+red = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(540, 540, -540, 540, -540, -540, 540, -540, 540, 540, 600, 600, 600, -600, -600, -600, -600, 600, 600, 600)
