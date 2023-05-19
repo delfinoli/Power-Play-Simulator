@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://enqwx4levape"]
+
+[ext_resource type="Script" path="res://terminal.gd" id="1_be5l5"]
+
+[node name="terminal" type="Area2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_be5l5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(180, 0, 0, 0, 0, -180)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
