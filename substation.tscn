@@ -10,5 +10,7 @@ script = ExtResource("1_i8ds4")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(102, 0, 0, 102, 0, -102)
 
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

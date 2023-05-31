@@ -11,5 +11,6 @@ script = ExtResource("1_be5l5")
 polygon = PackedVector2Array(180, 0, 0, 0, 0, -180)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

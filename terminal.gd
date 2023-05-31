@@ -11,6 +11,8 @@ var canDraw = false
 var Owned = false
 var coneColor
 var clickedIn
+var mouseInTerminal = false
+var currentBody
 var inTerminal
 
 
@@ -24,29 +26,36 @@ func _draw():
 		draw_circle(Vector2(20,-20),10,coneColor)
 		
 func _process(delta):
-	if Input.is_action_just_pressed("leftClick"):
-		if inTerminal == true:
-			clickedIn = true
-		else:
-			clickedIn = false
+	if inTerminal  == true and Input.is_action_just_pressed("leftClick") and mouseInTerminal == true and currentBody.hasCone == true and currentBody.inSubstation == false:
+		currentBody.hasCone = false
+		if currentBody.red == true and red == true:
+			global.redScore += 1
+			coneColor = Color(255,0,0)
+		elif currentBody.red == false and red == false:
+			global.blueScore += 1
+			coneColor = Color(0,0,255)
+		queue_redraw()
 
 func _on_body_entered(body):
 	if body.name == "Robot":
 		canDraw = true
-		if Input.is_action_just_pressed("leftClick"):
-			clickPos = get_local_mouse_position()
-		if clickedIn and body.hasCone == true and body.inSubstation == false:
-			body.hasCone = false
-			if body.red == true and red == true:
+		currentBody = body
+		inTerminal = true
+		if Input.is_action_just_pressed("leftClick") and mouseInTerminal == true and currentBody.hasCone == true and currentBody.inSubstation == false:
+			currentBody.hasCone = false
+			if currentBody.red == true and red == true:
 				global.redScore += 1
 				coneColor = Color(255,0,0)
-			elif body.red == false and red == false:
+			elif currentBody.red == false and red == false:
 				global.blueScore += 1
 				coneColor = Color(0,0,255)
 			queue_redraw()
 
 func _on_mouse_entered():
-	inTerminal = true
+	mouseInTerminal = true
 
 func _on_mouse_exited():
+	mouseInTerminal = false
+
+func _on_body_exited(body):
 	inTerminal = false
