@@ -14,7 +14,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body.name == "Robot":
+	if body.name == "Robot" or body.name == "oponent":
 		body.inSubstation = true
 		print("in substation: ", body.inSubstation)
 		if body.red == true and red == true and body.hasCone == false and global.redSubstationCones != 0:
@@ -27,5 +27,5 @@ func _on_body_entered(body):
 
 
 func _on_body_exited(body):
-	if body.name == "Robot":
+	if body.name == "Robot" or body.name == "oponent":
 		body.inSubstation = false

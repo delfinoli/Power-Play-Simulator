@@ -38,6 +38,7 @@ func _process(delta):
 					global.redScore += 3
 					global.blueScore -= 3
 				redOwns = true
+				global.ownership[id[0]][id[1]] = false
 			else:
 				global.blueScore += score
 				coneColor = Color(0,0,255)
@@ -47,13 +48,16 @@ func _process(delta):
 					global.redScore -= 3
 					global.blueScore += 3
 				redOwns = false
+				global.ownership[id[0]][id[1]] = true
 			queue_redraw()
+			print(global.ownership)
 
 func _on_body_entered(body):
-	if body.name == "Robot":
+	if body.name == "Robot" or body.name == "oponent":
 		canDraw = true
 		inJunction = true
 		currentBody = body
+		print("entered " + str(id[0]) + ", " + str(id[1]))
 
 func _on_body_exited(body):
 	inJunction = false

@@ -27,17 +27,19 @@ func _draw():
 		
 func _process(delta):
 	if inTerminal  == true and Input.is_action_just_pressed("leftClick") and mouseInTerminal == true and currentBody.hasCone == true and currentBody.inSubstation == false:
-		currentBody.hasCone = false
 		if currentBody.red == true and red == true:
+			currentBody.hasCone = false
 			global.redScore += 1
 			coneColor = Color(255,0,0)
+			queue_redraw()
 		elif currentBody.red == false and red == false:
+			currentBody.hasCone = false
 			global.blueScore += 1
 			coneColor = Color(0,0,255)
-		queue_redraw()
+			queue_redraw()
 
 func _on_body_entered(body):
-	if body.name == "Robot":
+	if body.name == "Robot" or body.name == "oponent":
 		canDraw = true
 		currentBody = body
 		inTerminal = true

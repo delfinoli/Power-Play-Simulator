@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export
 var robotNum = 1
 @export
-var red = true
+var red = false
 
 var hasCone = false
 var inSubstation = false
@@ -20,7 +20,7 @@ var height = 100
 var robotShape = Vector2(width,height)
 var robotColor = Color(0,0,0)
 
-var coneColor = Color(255,0,0)
+var coneColor = Color(0,0,255)
 
 func _ready():
 	clickPos = Vector2(position.x, position.y)
@@ -36,20 +36,34 @@ func _draw():
 func _process(delta):
 	queue_redraw()
 
+func findPole() -> Vector2:
+	for y in range(5):
+		for x in range(5):
+			if global.ownership[x][y] == false:
+				return Vector2((x-2)*180,(y-2)*180)
+	return Vector2(0,-180)
+
+func findNextPos() -> Vector2:
+	if global.blueSubstationCones > 0 or hasCone == true:
+		if inSubstation == true:
+			return findPole()
+		else:
+			return Vector2(0,-450)
+	else:
+		if position.distance_to(Vector2(-490,-490)) < position.distance_to(Vector2(490,490)):
+			return Vector2(-490,-490)
+		else:
+			return Vector2(490,490)
+
+
 func setTargetPos(target:Vector2) -> void:
 	atTarget = false
 	navigationAgent.set_target_position(target)
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("switchColor") and red == true:
-		red = false
-		coneColor = Color(0,0,255)
-	elif Input.is_action_just_pressed("switchColor") and red == false:
-		red = true
-		coneColor = Color(255,0,0)
-	if Input.is_action_just_pressed("leftClick"):
-		setTargetPos(get_global_mouse_position())
-		clickPos = get_global_mouse_position()
+	if atTarget == true:
+		setTargetPos(findNextPos())
+		clickPos = findNextPos()
 	
 	var moveDir = position.direction_to(navigationAgent.get_next_path_position())
 	velocity = moveDir * speed
