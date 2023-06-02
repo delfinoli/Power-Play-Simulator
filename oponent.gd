@@ -9,7 +9,7 @@ var hasCone = false
 var inSubstation = false
 var atTarget = false
 
-var speed = 300.0 
+var speed = 150.0 
 var clickPos = Vector2(0,0)
 @onready var navigationAgent = $NavigationAgent2D
 var moveDir = Vector2.ZERO

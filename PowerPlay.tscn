@@ -20,12 +20,13 @@ script = ExtResource("1_m85eq")
 
 [node name="Clock" type="Label" parent="."]
 offset_left = -960.0
-offset_top = 490.0
-offset_right = -920.0
-offset_bottom = 513.0
+offset_top = 400.0
+offset_right = -959.0
+offset_bottom = 537.0
+theme_override_font_sizes/font_size = 100
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 120.0
 one_shot = true
 autostart = true
 
@@ -33,6 +34,7 @@ autostart = true
 texture_filter = 1
 rotation = 1.5708
 texture = ExtResource("1_fuppl")
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.6, 0.6)
@@ -43,130 +45,157 @@ position = Vector2(-270, 490)
 [node name="junction" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, -360)
 score = 2
+metadata/_edit_lock_ = true
 
 [node name="junction2" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, -180)
 score = 3
 id = [0, 1]
+metadata/_edit_lock_ = true
 
 [node name="junction3" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, 0)
 score = 2
 id = [0, 2]
+metadata/_edit_lock_ = true
 
 [node name="junction4" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, 180)
 score = 3
 id = [0, 3]
+metadata/_edit_lock_ = true
 
 [node name="junction5" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-360, 360)
 score = 2
 id = [0, 4]
+metadata/_edit_lock_ = true
 
 [node name="junction6" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, -360)
 score = 3
 id = [1, 0]
+metadata/_edit_lock_ = true
 
 [node name="junction7" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, -180)
 score = 4
 id = [1, 1]
+metadata/_edit_lock_ = true
 
 [node name="junction8" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, 0)
 id = [1, 2]
+metadata/_edit_lock_ = true
 
 [node name="junction9" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, 180)
 score = 4
 id = [1, 3]
+metadata/_edit_lock_ = true
 
 [node name="junction10" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(-180, 360)
 score = 3
 id = [1, 4]
+metadata/_edit_lock_ = true
 
 [node name="junction11" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, -360)
 score = 2
 id = [2, 0]
+metadata/_edit_lock_ = true
 
 [node name="junction12" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, -180)
 id = [2, 1]
+metadata/_edit_lock_ = true
 
 [node name="junction13" parent="." instance=ExtResource("2_l04xk")]
 score = 2
 id = [2, 2]
+metadata/_edit_lock_ = true
 
 [node name="junction14" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, 180)
 id = [2, 3]
+metadata/_edit_lock_ = true
 
 [node name="junction15" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(0, 360)
 score = 2
 id = [2, 4]
+metadata/_edit_lock_ = true
 
 [node name="junction16" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, -360)
 score = 3
 id = [3, 0]
+metadata/_edit_lock_ = true
 
 [node name="junction17" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, -180)
 score = 4
 id = [3, 1]
+metadata/_edit_lock_ = true
 
 [node name="junction18" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, 0)
 id = [3, 2]
+metadata/_edit_lock_ = true
 
 [node name="junction19" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, 180)
 score = 4
 id = [3, 3]
+metadata/_edit_lock_ = true
 
 [node name="junction20" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(180, 360)
 score = 3
 id = [3, 4]
+metadata/_edit_lock_ = true
 
 [node name="junction21" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, -360)
 score = 2
 id = [4, 0]
+metadata/_edit_lock_ = true
 
 [node name="junction22" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, -180)
 score = 3
 id = [4, 1]
+metadata/_edit_lock_ = true
 
 [node name="junction23" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, 0)
 score = 2
 id = [4, 2]
+metadata/_edit_lock_ = true
 
 [node name="junction24" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, 180)
 score = 3
 id = [4, 3]
+metadata/_edit_lock_ = true
 
 [node name="junction25" parent="." instance=ExtResource("2_l04xk")]
 position = Vector2(360, 360)
 score = 2
 id = [4, 4]
+metadata/_edit_lock_ = true
 
 [node name="Substation" parent="." instance=ExtResource("4_5adhj")]
 position = Vector2(0, 540)
 rotation = -1.5708
+metadata/_edit_lock_ = true
 
 [node name="Substation2" parent="." instance=ExtResource("4_5adhj")]
 position = Vector2(0, -540)
 rotation = 1.5708
 red = false
+metadata/_edit_lock_ = true
 
 [node name="scoreBoard" parent="." instance=ExtResource("5_qn2se")]
 offset_left = -960.0
@@ -185,36 +214,57 @@ red = false
 position = Vector2(-540, -540)
 rotation = 1.5708
 red = false
+metadata/_edit_lock_ = true
 
 [node name="terminal2" parent="." instance=ExtResource("6_wu7gl")]
 position = Vector2(540, -540)
 rotation = 3.14159
+metadata/_edit_lock_ = true
 
 [node name="terminal3" parent="." instance=ExtResource("6_wu7gl")]
 position = Vector2(-540, 540)
+metadata/_edit_lock_ = true
 
 [node name="terminal4" parent="." instance=ExtResource("6_wu7gl")]
 position = Vector2(540, 540)
 rotation = -1.5708
 red = false
+metadata/_edit_lock_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(540, 540, -540, 540, -540, -540, 540, -540, 540, 540, 600, 600, 600, -600, -600, -600, -600, 600, 600, 600)
+metadata/_edit_lock_ = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 visible = false
 navigation_polygon = SubResource("NavigationPolygon_ncpnd")
 script = ExtResource("7_y3wlr")
+metadata/_edit_lock_ = true
 
 [node name="NavigationRegion2D2" type="NavigationRegion2D" parent="."]
 visible = false
 scale = Vector2(-1, -1)
 navigation_polygon = SubResource("NavigationPolygon_ncpnd")
 script = ExtResource("7_y3wlr")
+metadata/_edit_lock_ = true
 
 [node name="oponent" parent="." instance=ExtResource("8_h8j5a")]
 position = Vector2(-270, -490)
+
+[node name="Winner" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -136.5
+offset_right = 20.0
+offset_bottom = 136.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 200
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

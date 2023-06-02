@@ -15,9 +15,11 @@ script = ExtResource("1_s5r7m")
 layout_mode = 0
 offset_right = 1.0
 offset_bottom = 23.0
+theme_override_font_sizes/font_size = 80
 
 [node name="conesInSubstation" type="Label" parent="."]
 layout_mode = 0
-offset_top = 24.0
+offset_top = 90.0
 offset_right = 1.0
-offset_bottom = 47.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 35

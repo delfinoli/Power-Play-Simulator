@@ -4,7 +4,7 @@ var redScore = 0
 var redSubstationCones = 20
 
 var blueScore = 0
-var blueSubstationCones = 0
+var blueSubstationCones = 20
 
 var ownership = [
 	[null,null,null,null,null],
